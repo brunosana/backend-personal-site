@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { getRepository } from 'typeorm';
+import isAuthenticated from '../middlewares/isAuthenticated';
 import Project from '../models/Project';
 
 import CreateUserService from '../services/CreateProjectService';
@@ -13,6 +14,8 @@ projectsRouter.get('/', async (request, response) => {
     const projects = await projectsRepository.find();
     return response.json(projects);
 });
+
+projectsRouter.use(isAuthenticated);
 
 projectsRouter.post('/', async (request, response) => {
     const { name, url, tags, area } = request.body;
