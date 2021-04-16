@@ -3,10 +3,16 @@ import 'express-async-errors';
 import './database';
 import 'reflect-metadata';
 
+import cors from 'cors';
+
 import AppError from './errors/AppError';
 import Routes from './routes';
 
 const app = express();
+
+app.use(cors({
+    origin: true
+}));
 
 app.use(express.json());
 
