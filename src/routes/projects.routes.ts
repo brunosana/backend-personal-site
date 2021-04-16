@@ -49,7 +49,7 @@ projectsRouter.delete('/:id', async (request, response) => {
     const deleteProjectService = new DeleteProjectService();
     await deleteProjectService.execute(id);
 
-    return response.status(204).json({});
+    return response.status(204).send();
 });
 
 export default projectsRouter;
