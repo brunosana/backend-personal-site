@@ -9,9 +9,9 @@ const getOptions = async () => {
     synchronize: false,
     logging: false,
     extra: {
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     },
-    entities: ['dist/entity/*.*'],
+    entities: ['dist/entity/*.*', 'src/models/*.*'],
   };
   if (process.env.DATABASE_URL) {
     Object.assign(connectionOptions, { url: process.env.DATABASE_URL });
