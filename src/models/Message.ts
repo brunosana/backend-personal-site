@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('messages')
 class Message {
@@ -8,11 +8,18 @@ class Message {
     @Column()
     name: string;
 
-    @Column()
+    @Column({ nullable: true })
     email: string;
 
     @Column()
     message: string;
+
+    @CreateDateColumn()
+    createdAt: Date;
+
+    @UpdateDateColumn()
+    updatedAt: Date;
+
 }
 
 export default Message;
