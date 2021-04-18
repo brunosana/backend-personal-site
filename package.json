@@ -7,7 +7,7 @@
     "build": "tsc",
     "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "start": "ts-node dist/server.ts",
+    "start": "node dist/server.js",
     "deploy": "node dist/server.js"
   },
   "devDependencies": {
