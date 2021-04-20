@@ -17,30 +17,30 @@ class SendMaiLService {
             throw new AppError('Missing message property');
         }
 
-        const transport = mail.createTransport({
-            service: 'gmail',
-            auth: {
-                user: `${process.env.EMAIL}`,
-                pass: `${process.env.PASSWORD}`
-            }
-        });
+        // const transport = mail.createTransport({
+        //     service: 'gmail',
+        //     auth: {
+        //         user: `${process.env.EMAIL}`,
+        //         pass: `${process.env.PASSWORD}`
+        //     }
+        // });
 
-        const mailOptions = {
-            from: 'Bkp Sana 1 <bkpsana1@gmail.com>',
-            to: 'bkpsana1@gmail.com',
-            subject: 'Personal Site Message',
-            text: `Name: ${name}, ${email && `Email: ${email}`}
-                   Message: ${message}`
-        };
+        // const mailOptions = {
+        //     from: 'Bkp Sana 1 <bkpsana1@gmail.com>',
+        //     to: 'bkpsana1@gmail.com',
+        //     subject: 'Personal Site Message',
+        //     text: `Name: ${name}, ${email && `Email: ${email}`}
+        //            Message: ${message}`
+        // };
 
-        transport.sendMail(mailOptions, (error, info) => {
-            try {
-                throw new Error(`${error}`);
-            } catch (err) {
-                throw new Error(err);
-            }
-        });
-
+        // transport.sendMail(mailOptions, (error, info) => {
+        //     try {
+        //         throw new Error(`${error}`);
+        //     } catch (err) {
+        //         throw new Error(err);
+        //     }
+        // });
+        console.log(name, message, email);
     }
 }
 
